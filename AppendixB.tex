@@ -1,0 +1,233 @@
+この付録では、本文で触れなかった事項について、簡潔に補足解説を加える。
+
+\section{ASCII文字コード一覧}
+C言語でよく用いられる文字コードであるASCIIコードの一覧を示す。なお、特殊文字についてはその意味を記した。
+
+なお、C言語でこの一覧を出力したい場合は、次のコードを実行すれば良い。
+\begin{code}
+for(i=0;i<128;i++) printf("%d\t%x\t%c\n",i,i,(char)i);
+\end{code}
+
+
+\begin{center}
+\begin{tabular}{|c|c|c||c|c|c|}\hline
+10進&16進&文字&10進&16進&文字 \\ \hline
+ & & & & & \\[-15pt] \hline
+0&0x00&\verb|NUL|(null文字)&24&0x18&\verb|CAN|(とりけし)\\ \hline
+1&0x01&\verb|SOH|(ヘッダ開始)&25&0x19&\verb|EM|(メディア終了)\\ \hline
+2&0x02&\verb|STX|(テキスト開始)&26&0x1a&\verb|SUB|(置換)\\ \hline
+3&0x03&\verb|ETX|(テキスト終了)&27&0x1b&\verb|ESC|(エスケープ)\\ \hline
+4&0x04&\verb|EOT|(転送終了)&28&0x1c&\verb|FS|(フォーム区切り)\\ \hline
+5&0x05&\verb|ENQ|(照会)&29&0x1d&\verb|GS|(グループ区切り)\\ \hline
+6&0x06&\verb|ACK|(受信ＯＫ)&30&0x1e&\verb|RS|(レコード区切り)\\ \hline
+7&0x07&\verb|BEL|(警告)&31&0x1f&\verb|US|(ユニット区切り)\\ \hline
+8&0x08&\verb|BS|(後退)&32&0x20&\verb``(スペース)\\ \hline
+9&0x09&\verb|HT|(水平タブ)&33&0x21&\verb|!|\\ \hline
+10&0x0a&\verb|LF|(改行)&34&0x22&\verb|"|\\ \hline
+11&0x0b&\verb|VT|(垂直タブ)&35&0x23&\verb|#|\\ \hline
+12&0x0c&\verb|FF|(改頁)&36&0x24&\verb|$|\\ \hline
+13&0x0d&\verb|CR|(復帰)&37&0x25&\verb|%|\\ \hline
+14&0x0e&\verb|SO|(シフトアウト)&38&0x26&\verb|&|\\ \hline
+15&0x0f&\verb|SI|(シフトイン)&39&0x27&\verb|'|\\ \hline
+16&0x10&\verb|DLE|(データリンクエスケープ)&40&0x28&\verb|(|\\ \hline
+17&0x11&\verb|DC1|(装置制御１)&41&0x29&\verb|)|\\ \hline
+18&0x12&\verb|DC2|(装置制御２)&42&0x2a&\verb|*|\\ \hline
+19&0x13&\verb|DC3|(装置制御３)&43&0x2b&\verb|+|\\ \hline
+20&0x14&\verb|DC4|(装置制御４)&44&0x2c&\verb|,|\\ \hline
+21&0x15&\verb|NAK|(受信失敗)&45&0x2d&\verb|-|\\ \hline
+22&0x16&\verb|SYN|(同期)&46&0x2e&\verb|.|\\ \hline
+23&0x17&\verb|ETB|(転送ブロック終了)&47&0x2f&\verb|/|\\ \hline
+\end{tabular}
+
+\begin{tabular}{|c|c|c||c|c|c||c|c|c||c|c|c|}\hline
+10進&16進&文字&10進&16進&文字&10進&16進&文字&10進&16進&文字\\ \hline
+& & & & & & & & & & & \\[-15pt] \hline
+48&0x30&\verb|0|&68&0x44&\verb|D|&88&0x58&\verb|X|&108&0x6c&\verb|l|\\ \hline
+49&0x31&\verb|1|&69&0x45&\verb|E|&89&0x59&\verb|Y|&109&0x6d&\verb|m|\\ \hline
+50&0x32&\verb|2|&70&0x46&\verb|F|&90&0x5a&\verb|Z|&110&0x6e&\verb|n|\\ \hline
+51&0x33&\verb|3|&71&0x47&\verb|G|&91&0x5b&\verb|[|&111&0x6f&\verb|o|\\ \hline
+52&0x34&\verb|4|&72&0x48&\verb|H|&92&0x5c&\verb|\|&112&0x70&\verb|p|\\ \hline
+53&0x35&\verb|5|&73&0x49&\verb|I|&93&0x5d&\verb|]|&113&0x71&\verb|q|\\ \hline
+54&0x36&\verb|6|&74&0x4a&\verb|J|&94&0x5e&\verb|^|&114&0x72&\verb|r|\\ \hline
+55&0x37&\verb|7|&75&0x4b&\verb|K|&95&0x5f&\verb|_|&115&0x73&\verb|s|\\ \hline
+56&0x38&\verb|8|&76&0x4c&\verb|L|&96&0x60&\verb|`|&116&0x74&\verb|t|\\ \hline
+57&0x39&\verb|9|&77&0x4d&\verb|M|&97&0x61&\verb|a|&117&0x75&\verb|u|\\ \hline
+58&0x3a&\verb|:|&78&0x4e&\verb|N|&98&0x62&\verb|b|&118&0x76&\verb|v|\\ \hline
+59&0x3b&\verb|;|&79&0x4f&\verb|O|&99&0x63&\verb|c|&119&0x77&\verb|w|\\ \hline
+60&0x3c&\verb|<|&80&0x50&\verb|P|&100&0x64&\verb|d|&120&0x78&\verb|x|\\ \hline
+61&0x3d&\verb|=|&81&0x51&\verb|Q|&101&0x65&\verb|e|&121&0x79&\verb|y|\\ \hline
+62&0x3e&\verb|>|&82&0x52&\verb|R|&102&0x66&\verb|f|&122&0x7a&\verb|z|\\ \hline
+63&0x3f&\verb|?|&83&0x53&\verb|S|&103&0x67&\verb|g|&123&0x7b&\verb|{|\\ \hline
+64&0x40&\verb|@|&84&0x54&\verb|T|&104&0x68&\verb|h|&124&0x7c&\verb`|`\\ \hline
+65&0x41&\verb|A|&85&0x55&\verb|U|&105&0x69&\verb|i|&125&0x7d&\verb|}|\\ \hline
+66&0x42&\verb|B|&86&0x56&\verb|V|&106&0x6a&\verb|j|&126&0x7e&\verb|~|\\ \hline
+67&0x43&\verb|C|&87&0x57&\verb|W|&107&0x6b&\verb|k|&127&0x7f&\verb|DEL|(削除)\\ \hline
+\end{tabular}
+\end{center}
+
+\section{C言語の予約語一覧}
+C言語の予約語及びその意味を記す。
+\begin{itemize}
+\item void:型の無いことを宣言
+\item char:1バイト・文字型
+\item short:2バイト・単精度整数型
+\item int:4バイト・整数型
+\item long:4バイト・整数型
+\item float:4バイト・単精度浮動小数点型
+\item double:8バイト・倍精度浮動小数点型
+\item auto:自動変数、関数を抜けるとデータは消去、省略時のデフォルト
+\item static:静的変数、関数を抜けてもデータは残る
+\item const:書き換え不可、宣言時に格納
+\item signed:符号付変数を指定、省略時のデフォルト
+\item unsigned:符号なし変数を指定
+\item extern:異なるファイルから使用する際に宣言
+\item volatile:コンパイラに最適化をさせない
+\item register:レジスタに割り当て高速化、C++では使用出来るが意味は無い
+\item return:関数から抜ける、戻り値を指定できる
+\item goto:指定ラベルへジャンプする
+\item if:条件分岐 ( else, else if, を利用 )
+\item else:if文の条件分岐、( else if )とも使用
+\item switch:条件分岐、( case, break, default などを使用 )
+\item case:switch文での条件分岐
+\item default:switch文でのcaseに当てはまらない条件
+\item break:ループ文から抜ける、case文の終了
+\item for:ループ文、( 初期化; 終了条件; 変数更新 )
+\item while:ループ文、条件が真の場合に繰り返す
+\item do:do-while文で使用する、処理の開始
+\item continue:ループ文の先頭に戻る
+\item typedef:型に別名を付ける、意味は変わらず
+\item struct:構造体、変数をまとめて宣言するユーザー定義型
+\item enum:列挙型、整数の割り当て
+\item union:共用体、変数をまとめて宣言できるが、アドレスは共通
+\item sizeof:変数のサイズを取得
+\end{itemize}
+
+以上がC89の予約語で、C99は上記に加えて以下も予約語である。
+\begin{itemize}
+\item inline:コンパイラにインライン展開させ、高速化
+\item restrict:ポインタでアクセスする事を明示
+\item \_Bool:真偽値型、0=false, 1=true ( C++ではbool型 )
+\item \_Complex:複素数型 ( float, double, long double型の後に使用 )
+\item \_Imaginary:虚数型 ( float, double, long double型の後に使用 )
+\end{itemize}
+
+%\section{デバッグの基礎}
+
+\section{演算子の評価順序}
+C言語における演算子の評価順序を記す。なお、演算順序を変更する()は、これらより先に評価される。また、前置イン/デクリメントはこれらの評価よりも前に加減算のみを行い、後置イン/デクリメントはこれらの評価よりも後に加減算を行う。
+\begin{enumerate}
+\item 参照演算子\verb|.|と\verb|->|、関数引数の()、配列添字の[]が評価される。
+\item キャスト以外の単項演算子が評価される。
+\item キャストが評価される。
+\item 2項の乗除算・剰余が評価される。
+\item 2項の加減算が評価される。
+\item ビットシフトが評価される。
+\item 大小関係を表す比較演算子が評価される。
+\item \verb|==|および\verb|!=|演算子が評価される。
+\item 2項のビット演算子が評価される。ビット演算子は\verb|&|,\verb|^|,\verb`|`の順の評価となる。
+\item 論理演算子が評価される。ただし、\verb|&&|,\verb`||`の順の評価となる。
+\item 条件演算子が評価される。
+\item 代入演算子が評価される。
+\item コンマ演算子が評価される。
+\end{enumerate}
+
+\section{マクロの詳細な文法}
+マクロに関する演算子と可変引数マクロについて説明する。
+\subsection{文字列化演算子\#}
+関数マクロ定義中において、演算子\#を仮引数の前につけると、これはその仮引数を文字列化する役目を持つ(\textbf{文字列化演算子}\index{もじれつかえんざんし@文字列化演算子}(Stringizing Operator))。たとえば、
+\begin{code}
+#define PUTNAME(var) puts(#var)
+\end{code}
+というマクロを定義したとしよう。このマクロは、"実引数を標準出力するマクロ"である。以下のように呼び出しを行ったとしよう。
+\begin{code}
+PUTNAME(test);
+\end{code}
+この時、このマクロは次のように展開される。
+\begin{code}
+puts("test");
+\end{code}
+
+先には文字列化と記したが、決してchar *型の結果を返すのではなく、文字列リテラル化する演算子であるため、実際のコード中では文字列リテラルとして扱えばよい。たとえば、次の2つのprintf文は同じ出力になる。
+\begin{code}
+#define NAME(var) #var
+
+printf(NAME(arg) "=%d\n",arg);
+printf("%s=%d\n",NAME(arg),arg);
+\end{code}
+これはコンパイル時に隣接する文字列リテラルが結合されるという、文字列リテラルの性質を利用したコードである。
+
+\subsection{字句連結演算子\#\#}
+\textbf{字句連結演算子}\index{じくれんけつえんざんし@字句連結演算子}(Token-Pasting Operator)ないし\textbf{トークン連結演算子}\index{とーくんれんけつえんざんし@トークン連結演算子}\#\#は、やはり関数マクロ中で用いられ、コンパイル時に2つの字句を連結する。たとえば、
+\begin{code}
+#define MYFUNC(x) myfunc_##x
+\end{code}
+という定義を行い、
+\begin{code}
+MYFUNC(var)+MYFUNC(foo);
+\end{code}
+という記述を行ったとしよう。この時、マクロを展開すると
+\begin{code}
+myfunc_var+myfunc_foo;
+\end{code}
+となる。このように、定まった接頭辞/接尾辞をつける際などにこの演算子は役立つ。条件付きコンパイルと組み合わせることにより、ソースをかなり自在に書き換えることができる。
+
+\subsection{可変引数関数マクロ}
+C99以降では関数マクロの引数が可変引数であることが許される。通常の関数マクロとは違い、唯一の引数が可変引数であってもよい(もちろん、可変引数の前に識別子の並びをとっても良い。)
+
+可変引数関数マクロを定義する際には、可変引数関数同様に
+\begin{code}
+#define MACRO(...)
+\end{code}
+のように記し、可変引数を展開したい部分にはマクロ\verb|__VA_ARGS__|を記す。
+
+エラー出力用の関数マクロ\verb|eprintf|を定義することを考えよう。これは次のように定義することができる。
+\begin{code}
+#define eprintf(format,...) fprintf(stderr,format,__VA_ARGS__)
+\end{code}
+この関数マクロはprintfと同様の引数をとることで、stderrへの出力を行う。可変引数関数を用いて同様の機能を作ることができる(この場合は\verb|vfprintf|を用いると便利)が、やはり型チェックなどの点での差異があるため、必要に応じて使い分けたい。
+
+\section{volatile修飾子}
+型修飾子としてconstとrestrictを紹介したが、C言語の型修飾子にはもう一つ\textbf{volatile修飾子}\index{volatileしゅうしょくし@volatile修飾子}がある。これによって修飾された識別子については、処理系で行われる最適化を抑止する効果がある。組み込み処理やマルチスレッドプログラミングなどでよく用いられる。
+
+最適化を抑止するというのは、コンパイル時に条件文をうまくまとめて減らしたり、処理手順を減らしたりする場合の問題を防ぐためにある。実際の活用については本書の範囲を大きく超えるので、ここではひとまず紹介のみとしておく。
+
+なお、volatile修飾子に関する文法はconstのそれと同様であり、volatile型修飾子がついた変数へのポインタなども存在する。
+
+\section{ロケール}
+\textbf{ロケール}\index{ろけーる@ロケール}(locale)とは、ソフトウェア毎に定められた、言語/国/地域への対応/指定機能である。ロケールを変更すると、日付、通貨記号などを始め、小数点の表記などに至るまで、様々な点で国に応じた変更が加えられる(但し、コンパイラがそのロケールに対応していればだが)。C言語では、ロケール設定の機能はlocale.hに入っている。ここでは、その設定方法を簡潔に記すに留める。
+\\ \\　
+一般に、ロケールを設定する際には、
+\begin{code}
+setlocale(LC_ALL,"ja");
+\end{code}
+などのように、setlocale関数を用いる。第1引数に設定したいロケール属性を記し、第2引数にコンパイラのサポートしている国別コードを記す。第1引数の属性は、locale.hで定数として定められており、ここで用いた「全て変更する」\verb|LC_ALL|以外にも日付を指定する\verb|LC_TIME|や数値の書き方を示す\verb|LC_NUMERIC|などがある。第2引数の"ja"は日本のロケールであるが、これについてはそれぞれのコンパイラで確認されたい。なお、setlocaleにおいて対応していないなどの理由でロケールの設定が失敗した場合はNULLポインタが返却される。そのため、NULLポインタになっていないかどうかをチェックすることで例外処理を行うことができる。
+
+一般にロケールはlocale.h内の関数のみを用いて変更し、自作のソースなどで変更すべきではない。同じlocale.hにはlocaleを扱うための構造体\verb|struct lconv|とそれを取得するための関数\verb|localeconv|関数が用意されているが、これはあくまでも移植性の確保などのためであって、setlocale以外で変更するのは推奨されない。
+
+なお、C言語の標準ロケールは"C"であり、規格上はこのロケールにさえ対応していればC言語のコンパイラとしての要件は満たしている。"C"ロケールは元々のC言語の定義に対して矛盾しない最低限のロケール設定を行うロケールである。
+
+\section{マルチバイト文字とワイド文字}
+日本語をはじめ、1バイトで表せない文字は多い。これら1バイトでない文字は次の二つのいずれかの方法で表される。
+\begin{itembox}[l]{1バイトで表せない文字の表現方法}
+\begin{itemize}
+\item 文字ごとに表すために用いるバイト数が異なる\textbf{マルチバイト文字}\index{まるちばいともじ@マルチバイト文字}(multibyte character)。
+\item すべての文字を同じバイト数で表現する\textbf{ワイド文字}\index{わいどもじ@ワイド文字}(wide character)。
+\end{itemize}
+\end{itembox}
+
+これらを扱うための関数群が標準ライブラリに用意されている。以下、これらのワイド文字/マルチバイト文字の扱いを簡単に説明する。
+
+\subsection{マルチバイト文字}
+さて、先に書いたとおり、マルチバイト文字は複数バイトで文字を表す方法である。日本語の場合、Shift\_JISやEUC-JP,UTF-8など主要な文字コードは何れもマルチバイト文字である。これらの文字数などを適切に数えたい場合には、前もって日本語ロケールを設定した後、mb...などという名前の関数を用いれば良い。char型などに突っ込んでも、大抵は適切に動作する。
+
+C言語で扱うマルチバイト文字の一部に0x00は存在しない。すなわち、マルチバイト文字を用いても途中で文字列が終わることはない。しかし、例えば\verb|\|マークとなるような値が含まれることがある。これにより、文字化けを起こすこともあるのが、マルチバイト文字の難点である。一般に、日本語の処理を行える環境ではこれらを適切に処理してくれるが、必ずしも上手くいくとは限らない。上手くいかない場合には、ロケールの設定の対策などが必要になる。
+
+\subsection{ワイド文字}
+ワイド文字は1文字あたりのサイズが決まっているため、マルチバイト文字に比べれば、扱いが簡単なように見えるだろう。この為か、C言語の規格で定められた関数はワイド文字に対するものが多いように思える。C95で追加されたヘッダである、wctype.hやwchar.hはワイド文字に関するヘッダである。
+
+このwchar.hにおいて、ワイド文字を扱うための型\verb|wchar_t|が定義されている。ワイド文字が何バイトかは定まっていないので、\verb|wchar_t|のサイズは処理系に依存する。
+\\ \\　
+ワイド文字定数やワイド文字列リテラルを扱う場合、通常の文字定数/文字列リテラルの記法の前に\verb|L|を付す。出力の際にはwprintf関数を用い、ワイド文字列の書式指定子には\verb|%ls|を用いる。この規則さえ覚えておけば、残りの扱い方は文字列の扱いと大差ない。関数群が\verb|str...|から\verb|wcs...|に変わるだけである。
+
+マルチバイト文字列を扱う場合も、日本語ロケールの設定を行なって、char型配列にマルチバイト文字列を読み込んだ後、ワイド文字に変換して処理を行うほうが楽に書くことができる。マルチバイト文字/ワイド文字の変換には、wctomb,mbtowc,mbstowcs,wcstombsの4つの関数を用いると便利である。
+

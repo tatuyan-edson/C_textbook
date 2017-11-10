@@ -1,0 +1,428 @@
+構造化定理の第3の構造、反復構造について学ぶ。
+\section{反復構造とは}
+\textbf{反復構造}\index{はんぷくこうぞう@反復構造}は、ある条件の下、一定の処理を繰り返す構造である。例えば、「1以上1000未満の自然数の内、3ないし5の倍数である数の総和を求めよ」\footnote{これはProject Eulerの第1問からの引用である。}という問題を考える場合、1から1000までの数について、それが3ないし5で割り切れるかを判定し、割り切れるならばそれを加える、ということになる。換言すれば「ある自然数$n$が3か5の倍数であるか判定し、真ならば足す」という処理を、$n$を1から順に1ずつ増やし、$n=1000$となるまで繰り返すということになる。
+
+\section{while文}
+不定回数のループには、while文を使うことが多い。
+\begin{boxnote}
+\begin{multicols}{2}
+\minisec{角谷予想}
+自然数がある時、それが偶数ならば2で割り、奇数ならば3倍して1を足す。この操作を繰り返して、最終的に1になるかどうか(全ての自然数は最終的に1になるという予想が角谷予想/Collatz予想である。)を確認したい。これは、次のプログラムが終了するかどうかで確かめられる。
+
+なお、unsigned intの範囲の全ての数について、この予想は成立することが知られている。
+\begin{lstlisting}[caption=角谷予想,label=program5_1]
+#include<stdio.h>
+
+int main(void){
+  unsigned int num;
+  scanf("%u",&num);
+  while(num!=1){
+    if(num%2==0){
+      num>>=1;
+    }else{
+      num*=3;
+      num++;
+    }
+  }
+  return 0;
+}
+\end{lstlisting}
+\end{multicols}
+\end{boxnote}
+\minisec{while文による反復}
+今回のテーマであるwhile文の公式を早速示そう。
+\begin{itembox}[l]{while文}
+while文は
+\begin{code}
+while(条件式){
+  処理;
+}
+\end{code}
+の形式で書き、条件式が真である限り\{\}内の処理を繰り返すという意味になる。
+\end{itembox}
+　while文の動作について、もう少し詳しく説明しておこう。
+
+まず、while文に達すると、条件式が評価される。条件式が真であれば、\{\}内の一連の処理が実行される。実行された後、再度whileの場所に戻り、条件式が真か偽かを判定する。これを、条件式が偽になるまで繰り返し、偽になったら\verb|while(...){...}|を全て飛ばして次の処理にうつる。以上が、while文の動作である。
+\\ \\　
+while文は、通常不定回数のループに用いられる。例えば、リスト\ref{program5_1}のプログラムのように、数そのものに対して繰り返し処理を行ったり、ある漸化式が収束するまで計算したりする場合である。また、後に紹介するbreak文と組み合わせてwhile(1)の形式で用い、無限ループにする場合もある。
+\\ \\　
+条件式の値ということを利用した、少し高度なテクニックの例を紹介しておく。
+\begin{boxnote}
+\begin{multicols}{2}
+\minisec{ターミネータ型総和}
+整数が次々入力される時、その総和を出力するプログラムを作成する。なお、入力の終端は0とする\footnote{このように、入力などの終端を示す値のことを\textbf{ターミネータ}\index{たーみねーた@ターミネータ}(terminator)と呼ぶ。}。
+\minisec{解説}
+ここでは少し難しいテクニックを利用した。scanfは読み込みを行った場合に値を返し、その値は入力に成功したバイト数(正)である。これと、入力された数が0でないかどうかをチェックし、都度計算を行っている。
+\begin{lstlisting}[caption=ターミネータによる総和計算,label=program5_2]
+#include<stdio.h>
+
+int main(void){
+  int num,sum=0;
+  while(scanf("%d",&num) && num){
+    sum+=num;
+  }
+  printf("%d\n",num);
+  return 0;
+}
+\end{lstlisting}
+\end{multicols}
+\end{boxnote}
+
+\section{do-while文}
+最低でも一回はやってほしいというとき、条件文の判定をしてから処理を繰り返す\textbf{前置反復}\index{ぜんちはんぷく@前置反復}ではなく処理をした後にもう一度やるかどうか判定する\textbf{後置反復}\index{こうちはんぷく@後置反復}という方法もある。これを実装するのがdo-while文である。では、今回はゲームを作成してみよう。
+\begin{boxnote}
+\begin{multicols}{2}
+\minisec{数当てゲーム}
+コンピュータが0以上10000以下の数のうち、一つを内部で決定する(これには擬似乱数を用いる。この節では、擬似乱数についても解説する。)。
+\\ \\
+プレイヤーはこれに対して、適当に自然数を入力していく。
+\\ \\
+各入力に対して、コンピュータの決定した数と異なっているならば、その数が決定した数より大きいか小さいかを出力し、そうでなければ正解として終了するプログラムを作成する。\\　
+\begin{lstlisting}[caption=数当てゲーム,label=program5_3]
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+
+int main(void){
+  int num,input;
+  srand(time(NULL));
+  num=rand()%10001;
+  do{
+    scanf("%d",&input);
+    if(num<input)
+      puts("It's Greater!");
+    else if(num>input)
+      puts("It's Lower!");
+    else
+      puts("Congraturation!");
+  }while(num!=input);
+  return 0;
+}
+\end{lstlisting}
+\end{multicols}
+\end{boxnote}
+\minisec{擬似乱数}
+コンピュータは完全な意味での乱数を作ることができない。そこで、乱数のように見える値がでる規則性(漸化式ないし操作)に従って順次計算を行い、それを乱数列としている。このように、ある一定の規則のもと生み出される、乱数のように見える数のことを\textbf{擬似乱数}\index{ぎじらんすう@擬似乱数}(pseudorandom number)と呼ぶ。
+\\ \\　
+先に書いたとおり、擬似乱数は数列であるので、その計算には初項が必要である。その初項のことを\textbf{乱数の種}\index{らんすうのたね@乱数の種}(seed of rand)といい、これを設定するのがsrand関数である。この、srand関数の引数を初項とし、その後、rand関数を呼び出す毎に擬似乱数列\footnote{単に擬似乱数といった場合、実数の乱数もありうるが、rand関数で計算されるのは整数の乱数である。}の次の項が計算される。これが擬似乱数利用の仕組みである。なお、rand関数及びsrand関数はstdlib.hに入っている。
+\\ \\　
+ここでは、srandの引数をtime(NULL)としている。このtime関数は、1970年1月1日00:00からの経過時間(sec)を返す関数である。本来、引数にはその時間を格納する変数のポインタを取るのだが、ここでは格納するつもりがないのでNULLとした(詳細は後ほど、ポインタを学んだ後に理解されたい。)。したがって、プログラムの起動した時刻に応じて乱数の種が変わり、それによって計算される乱数が違うということになる。
+\\ \\　
+以上がここで用いた擬似乱数の説明であり、一般にも比較的よく見かけるものである。まとめておこう。
+\begin{itembox}[l]{(擬似)乱数の使い方}
+(擬似)乱数を用いるには、まず
+\begin{code}
+#include<stdlib.h>
+#include<time.h>
+\end{code}
+と、二つのヘッダファイルをインクルードした後、
+\begin{code}
+srand(time(NULL));
+\end{code}
+で、現在の時刻を乱数の種に設定し、必要毎に
+\begin{code}
+rand();
+\end{code}
+で計算を行う。なお、乱数の種の設定は一度だけで良い。(rand関数は呼び出しの際に前の乱数の値を覚えており、その値を用いて次の乱数を計算するため。)
+\end{itembox}
+\minisec{do-while文}
+ここで新しく出てきた構造である、do-while文は\textbf{後置反復}\index{こうちはんぷく@後置反復}を行うものである。後置反復とは、条件判断が処理の後に来る反復を言う。つまり、「処理を行う」→「その処理を再度実行するか判定する」という形式の反復構造である。反復の判定を後に持ってくることにより、よりプログラムが書きやすい場合(例えば、初期値を一度以上改良してから、適切な値になるまで計算を行う方程式の反復解法など)に用いられる。
+
+do-whileの書式は次のとおりである。
+\begin{itembox}[l]{do-while文}
+do-while文は
+\begin{code}
+do{
+  処理
+}while(条件式);
+\end{code}
+の形式で書き、do以後処理を一度行った後、条件式を判定し、再度反復を行うかどうか判定する。
+
+while(条件式)の後にセミコロン(\verb|;|)が必要なのを忘れがちなので注意。
+\end{itembox}
+
+\section{for文}
+while文が不定回数のループによく用いられるのに対し、for文は定回数のループに用いられることが多い構文である。では、具体例を見てみよう。
+\begin{boxnote}
+\begin{multicols}{2}
+\minisec{FizzBuzz}
+FizzBuzzは次のようなゲームである。
+\begin{itemize}
+\item 1から順に整数を言っていく。
+\item 3の倍数であるときには、整数を言う代わりに"Fizz"という。
+\item 5の倍数であるときには、整数を言う代わりに"Buzz"という。
+\item 3の倍数でも5の倍数でもあるときには、整数を言う代わりに"FizzBuzz"という。
+\end{itemize}
+入力される自然数$n$まで、上記のルールに従って出力するプログラムを作成する。
+\begin{lstlisting}[caption=FizzBuzz,label=program5_4]
+#include<stdio.h>
+
+int main(void){
+  unsigned int n,i;
+  scanf("%u",&n);
+  for(i=1;i<=n;i++){
+    if(i%15==0){
+      puts("FizzBuzz");
+    }else if(i%5==0){
+      puts("Buzz");
+    }else if(i%3==0){
+      puts("Fizz");
+    }else{
+      printf("%u",i);
+    }
+  }
+  return 0;
+}
+\end{lstlisting}
+\end{multicols}
+\end{boxnote}
+\minisec{for文}
+今回用いたfor文は、少しつかみにくい形の文かもしれないが、多用される文である。
+\begin{itembox}[l]{for文}
+for文は
+\begin{code}
+for(初期処理;条件文;終端処理)[
+　処理
+}
+\end{code}
+の形式で記す。
+\end{itembox}
+
+このfor文は、次のような動作を行う。
+\begin{enumerate}
+\item まず、for文のところに来たら、初期処理を行う。
+\item 次いで、条件文を判定し、真ならばブロックの処理を行う(偽ならばforの後に飛ぶ)。
+\item ブロック終端まで来たら、終端処理を実行し、再度条件文判定部に戻る。
+\end{enumerate}
+　したがって、リスト\ref{program5_4}のforは
+\begin{enumerate}
+\item まず、iに1を代入する。
+\item iがn以下であれば、ブロック中の処理(if節)を実行する。そうでなければfor節を飛ばす。
+\item iをインクリメントし、前項に戻る。
+\end{enumerate}
+という処理になる。
+\\ \\　
+このfor文において回している変数を\textbf{カウンタ}\index{かうんた@カウンタ}(counter)と呼び、通常i,j,kをこの順で用いる。また、後述する配列などとの関連から、単にn回繰り返したい場合には
+\begin{code}
+for(i=0;i<n;i++)
+\end{code}
+の形で用いられることが多い。
+\\ \\　
+もうひとつ、多重ループの例を見ておこう。
+\begin{boxnote}
+\minisec{九九表の出力}
+入力される自然数$n$に対して、九九表と同様の形で積の一覧表を出力するプログラムを作成する。
+\begin{multicols}{2}
+\minisec{解説}
+やや難しいのは$l$.8のprintf(2行にわかれているが、続けて書くこと)だろうか。\verb|%c|書式指定子が第3引数の条件演算子を用いて書かれた式に対応している。ここから、この\verb|%c|はjがn-1の時に限り改行になり、それ以外の時は水平タブとなる。
+
+なお、多重ループは(書いてあるとおりに)そのまま読めばわかるが、内側のループが先に回る。つまり、(i,j)=(0,0),(0,1),...,(0,n-1),(1,0),...という順でループが行われる。
+\begin{lstlisting}[caption=掛け算表の出力,label=program5_5]
+#include<stdio.h>
+
+int main(void){
+  unsigned int i,j,n;
+  scanf("%u",&n);
+  for(i=0;i<n;i++){
+    for(j=0;j<n;j++){
+      printf("%4u%c",(i+1)*(j+1),j==n-1?'\n':'\t');
+    }
+  }
+  return 0;
+}
+\end{lstlisting}
+\end{multicols}
+\end{boxnote}
+リスト\ref{program5_5}の$l$.6〜$l$.10は、
+\begin{code}
+for(i=0;i<n;i++) for(j=0;j<n;j++) printf("%4u%c",(引数略));
+\end{code}
+と、中括弧を用いずに書くこともできる。一つの処理だけを二重ループする場合にはこのような書き方をしても良いが、処理が複雑な場合は無理にまとめず中括弧を用いてブロック化して書いたほうが良い。
+
+ここでブロック化したほうが良いと述べたのは、例えば
+\begin{code}
+for(i=0;i<n;i++) for(j=0;j<n;j++){
+　処理
+}
+\end{code}
+のような記述や、
+\begin{code}
+for(i=0;i<n;i++) if(i==0) if(n==0) n++; else printf("%d\n",i)
+\end{code}
+のような記述が文法上許されてしまうためである。これらの記述は複数の解釈が可能な「曖昧な文法」であり、誤解のもとである。そのため、構造を作る命令に対しては、ごく簡単な場合を除き、面倒であっても中括弧をつけたほうが良いだろう。
+
+\section{反復制御文とgoto文}
+反復を途中で抜けだしたり、処理を打ち切ったりするのが\textbf{反復制御文}\index{はんぷくせいぎょぶん@反復制御文}である。また、流れを変える最も強力な手段がgoto文である。これらを用いたゲームの例を見ていこう。
+\begin{boxnote}
+\minisec{ハイ\&ローゲーム}
+現在出ている数字に比べて、次に出てくる数字が小さいか大きいかを当てるゲーム「ハイ\&ロー」を作成する。
+\minisec{解説}
+様々な反復制御文を入れて、エラー処理を行った。ここまでに学んだ文法の多くが出ている、総復習になるソースである。
+\begin{lstlisting}[caption=ハイ\&ロー,label=program5_6]
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+
+int main(void){
+  int num,next,money=50,bet,flg,stat;
+  char rep;
+  srand(time(NULL));
+  while(1){
+    printf("now your money is %d.\n",money);
+    printf("How much do you bet?[1-%d]>>>",money);
+\end{lstlisting}
+
+\end{boxnote}
+\begin{boxnote}
+\addtocounter{lstlisting}{-1}
+\begin{lstlisting}[caption=ハイ\&ロー(続き),firstnumber=12]
+    scanf("%d%*c",&bet);
+    if(bet<=0 || bet>money){
+      puts("Bet error");
+      continue;
+    }
+    money-=bet;
+    stat=bet;
+    num=rand()%10;
+    while(1){
+      printf("now num=%d, High & Law?[H/L]>>>",num);
+      scanf("%c%*c",&rep);
+      if(rep!='H' && rep!='h' && rep!='L' && rep!='l'){
+        puts("Input error");
+        continue;
+      }
+      next=rand()%10;
+      if(num==next){
+        puts("It's same! One more...");
+        continue;
+      }
+      if((rep=='H' || rep=='h') && num>next) flg=1;
+      else if((rep=='L' || rep=='l') && num<next) flg=1;
+      else flg=0;
+      if(flg==1){
+        printf("The number is %d! You lose...\n",next);
+        break;
+      }else{
+        printf("The number is %d! You win!\n",next);
+      challenge:
+        printf("You can bet continuously. Challenge? [Y/N]>>>");
+        scanf("%c%*c",&rep);
+        if(rep=='N' || rep=='n'){
+          printf("Okay, you get %d money!\n",bet);
+          money+=bet+stat;
+          break;
+        }else if(rep=='Y' || rep=='y'){
+          puts("Okay, you challenge next!");
+          bet*=2;
+        }else{
+          puts("Input error");
+          goto challenge;
+        }
+      }
+      num=next;
+    }
+\end{lstlisting}
+\end{boxnote}
+
+\begin{boxnote}
+\addtocounter{lstlisting}{-1}
+\begin{lstlisting}[caption=ハイ\&ロー(続き),firstnumber=57]
+    if(money==0){
+      puts("you can't bet!");
+      break;
+    }
+  more:
+    printf("One more?>>[y/n]");
+    scanf("%c%*c",&rep);
+    if(rep=='N' || rep=='n'){
+      break;
+    }else if(rep=='Y' || rep=='y'){
+      puts("Okay, you bet next!");
+    }else{
+      puts("input error");
+      goto more;
+    }
+  }
+  printf("your last money is %d.\n",money);
+  puts("See you agein!");
+  return 0;
+}
+\end{lstlisting}
+\end{boxnote}
+非常に長いソースであるが、新出文法は少ない。
+\minisec{break文とcontinue文}
+$l$.15や$l$.25に見られるcontinue文と$l$.37や$l$.46に見られるbreak文がここで説明する重要な新出文法である。
+\\ \\　
+continue文は、それが含まれる直近階層のループ終端の\verb|}|の直前に飛ぶという命令である。例えば、$l$.15は$l$.9のwhile終端(=$l$.72)に、$l$.25や$l$.30は$l$.20のwhile終端(=$l$.56)に飛ぶことになり、whileの判定が再度行われることになる。なお、continue文はブロック終端に飛ぶ命令であるため、for文中でcontinueを用いた場合、その終端処理は忘れず行われる。
+\\ \\　
+break文は、それが含まれる直近階層のループの終端直後に飛ぶ(＝ループから抜け出す)命令である。$l$.37のbreakは$l$.20のwhile終端(=$l$.56)から、$l$.65のbreakは$l$.9のwhile終端(=$l$.72)から抜け出すことになる。break文はその性質上、条件文と併用して用いられることが多いが、switch case文と併用するとswitchに対するbreak文と解釈されてしまい、ループ抜け出しにならない点に注意されたい。なお、breakは抜け出しであるので、for文の終端処理は実行されない。
+
+\minisec{goto文とラベル}
+goto文は通常使わないほうがいいとされる文である。この文は、任意のラベルまで飛ぶという命令である。ここで、ラベルとは$l$.40や$l$.61のように、
+\begin{code}
+任意の名前:
+\end{code}
+によってつけられるものである。これに対してgotoは
+\begin{code}
+goto label;
+\end{code}
+の形で記し、labelまで飛ぶという意味になる。このgoto文を無闇に用いると流れがわかりづらい\textbf{スパゲッティソースコード}\index{すぱげってぃそーすこーど@スパゲッティソースコード}になるため、使用する際には十分注意を払い、多重ループからの抜け出し程度のみとすべきである。基本的に全く使わないとしておいても良い。
+
+\minisec{リスト\ref{program5_6}の簡単な解釈}
+ソースの大雑把な説明だけを記しておく。
+\begin{description}
+\item[$l$.6〜8] 初期設定。
+\item[$l$.10〜$l$.16] 賭け金の入力とそのエラー処理。
+\item[$l$.17〜$L$.19] 賭けの初期設定。
+\item[$l$.21〜$l$.26] 高いか低いかの入力とそのエラー処理。
+\item[$l$.27〜$l$.39] 次の番号の抽選と高い/低いの正誤判定。
+\item[$l$.40〜$l$.56] 勝った場合に、賞金を次の賭け金にしてそのまま連続チャレンジするかの処理。
+\item[$l$.57〜$l$.60] 所持金が尽きた場合の処理。
+\item[$l$.61〜$l$.72] もう一度プレイするかどうかの処理。
+\item[$l$.73〜$l$.76] 最後の出力。
+\end{description}
+
+\newpage
+
+\begin{shadebox}
+\section*{本講の要点}
+本講では、反復構造の記法と乱数について学習した。
+\subsection*{反復構造と反復制御文}
+\begin{itemize}
+\item 反復構造は次のように作ることができる。
+ \begin{itemize}
+  \item while文。
+\begin{code}
+while (条件式) {
+  処理
+}
+\end{code}
+といった形で用い条件式が真である場合にその処理を実行し続ける。
+
+  \item for文。
+\begin{code}
+for (初期処理; 条件式; 終端処理) {
+  処理
+}
+\end{code}
+の形式で記す。この文に来た時に初期処理を実行したのち、条件式を評価し、非0ならばブロックの処理を実行する。その後、終端処理を施して、再度条件式の評価を行う。これを繰り返す。
+
+  \item do while文。
+\begin{code}
+do {
+  処理
+} while (条件式); 
+\end{code}
+といった形で用い、まず一度ブロック内の処理を行った後\verb|while|と同じ動作を行う。
+ \end{itemize}
+ \item 反復構造で途中から抜けたい場合には\verb|break|文を、途中でそのブロック終端まで移動したい場合は\verb|continue|文を用いる。これらを反復制御文という。
+ \item goto文とラベルを用いて流れを制御することもできるが、可読性を下げることにもなりかねないので無闇に使うべきではない。
+\end{itemize}
+
+\subsection*{擬似乱数}
+\begin{itemize}
+\item コンピュータは本当の乱数を作ることができないので、乱数に見えるようなある一定の規則に従った数列を乱数の代わりに用いる。これを擬似乱数という。
+\item 擬似乱数の乱数列の初項を乱数の種といい、srand関数で設定する。
+\item rand関数は内部状態として乱数列の前項の状態を保存しており、呼び出すことで前項の乱数から別の乱数を計算して返却する。
+\end{itemize}
+\end{shadebox}

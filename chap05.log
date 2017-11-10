@@ -1,0 +1,62 @@
+This is e-pTeX, Version 3.1415926-p3.3-110825-2.4 (utf8.euc) (TeX Live 2012) (format=platex 2012.11.25)  19 SEP 2013 01:44
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**chap05
+(./chap05.tex
+pLaTeX2e <2006/11/10> (based on LaTeX2e <2011/06/27> patch level 0)
+Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman-x-2012-05-30, ngerman-x-2012-05-30, afrikaans, ancientgreek, ibycus, arabi
+c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
+h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
+h, french, friulan, galician, german, ngerman, swissgerman, monogreek, greek, h
+ungarian, icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, ma
+rathi, oriya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, 
+kurmanji, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk,
+ polish, portuguese, romanian, romansh, russian, sanskrit, serbian, serbianc, s
+lovak, slovenian, spanish, swedish, turkish, turkmen, ukrainian, uppersorbian, 
+welsh, loaded.
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 構
+      造化定理の第3の構造、反復構造について学ぶ。
+? 
+! Interruption.
+\GenericError  ...                                
+                                                  \endgroup 
+l.1 構
+      造化定理の第3の構造、反復構造について学ぶ。
+? 
+! Undefined control sequence.
+l.2 \section
+            {反復構造とは}
+? 
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 3.
+! Undefined control sequence.
+\@footnotetext ...tempa \reset@font \footnotesize 
+                                                  \interlinepenalty \interfo...
+l.3 ...れはProject Eulerの第1問からの引用である。}
+                                                  という問題を考える場合、1...
+? X
+ 
+Here is how much of TeX's memory you used:
+ 10 strings out of 494059
+ 115 string characters out of 3156204
+ 51965 words of memory out of 3000000
+ 3536 multiletter control sequences out of 15000+200000
+ 7827 words of font info for 32 fonts, out of 3000000 for 9000
+ 745 hyphenation exceptions out of 8191
+ 24i,5n,14p,544b,103s stack positions out of 5000i,500n,10000p,200000b,50000s
+No pages of output.

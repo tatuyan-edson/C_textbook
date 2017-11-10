@@ -1,0 +1,574 @@
+\contentsline {chapter}{\numberline {第0講}プログラミングの前に}{1}
+\contentsline {section}{\numberline {0.1}記数法とコンピュータ}{1}
+\contentsline {subsection}{\numberline {0.1.1}記数法の一般論}{1}
+\contentsline {subsection}{\numberline {0.1.2}記数法の変換}{2}
+\contentsline {subsubsection}{【10進法との相互変換】}{2}
+\contentsline {subsubsection}{【2進/8進/16進の直接変換】}{3}
+\contentsline {subsection}{\numberline {0.1.3}ビットとバイト}{4}
+\contentsline {section}{\numberline {0.2}パソコンの仕組み}{5}
+\contentsline {subsection}{\numberline {0.2.1}パソコンを構成する装置}{5}
+\contentsline {subsection}{\numberline {0.2.2}主記憶装置}{6}
+\contentsline {subsubsection}{【主記憶装置の種類】}{6}
+\contentsline {subsubsection}{【RAM】}{7}
+\contentsline {subsubsection}{【メモリの領域】}{7}
+\contentsline {subsubsection}{【メモリとアドレス】}{8}
+\contentsline {subsubsection}{【スタック領域とヒープ領域の特徴】}{8}
+\contentsline {subsection}{\numberline {0.2.3}ソフトウェアの分類}{8}
+\contentsline {subsubsection}{【基本ソフトウェアと応用ソフトウェア】}{8}
+\contentsline {subsubsection}{【ユーザインターフェイスによる分類】}{9}
+\contentsline {section}{\numberline {0.3}Cプログラミング環境構築}{9}
+\contentsline {subsection}{\numberline {0.3.1}Windowsでの環境構築}{9}
+\contentsline {subsection}{\numberline {0.3.2}Linuxについて}{10}
+\contentsline {subsection}{\numberline {0.3.3}Windowsホスト環境へのLinuxの導入}{10}
+\contentsline {subsection}{\numberline {0.3.4}Linuxの端末操作}{11}
+\contentsline {subsubsection}{【パス】}{11}
+\contentsline {subsubsection}{【端末のコマンド操作の例】}{11}
+\contentsline {subsubsection}{【ワイルドカード表現】}{13}
+\contentsline {subsubsection}{【リダイレクト】}{14}
+\contentsline {subsection}{\numberline {0.3.5}Linuxでの環境構築}{14}
+\contentsline {chapter}{\numberline {第1講}プログラミングとは何か}{17}
+\contentsline {section}{\numberline {1.1}プログラミングとは何か}{17}
+\contentsline {section}{\numberline {1.2}プログラミング言語とC言語}{18}
+\contentsline {subsection}{\numberline {1.2.1}高級言語・低級言語と処理の流れ}{18}
+\contentsline {subsection}{\numberline {1.2.2}C言語の特徴}{19}
+\contentsline {subsection}{\numberline {1.2.3}C言語の歴史}{19}
+\contentsline {section}{\numberline {1.3}プログラム作成の一連の流れ}{21}
+\contentsline {subsection}{\numberline {1.3.1}コーディングまでの体験}{21}
+\contentsline {subsubsection}{【hello worldプログラム】}{22}
+\contentsline {subsubsection}{【解説】}{22}
+\contentsline {subsection}{\numberline {1.3.2}コンパイル・実行}{22}
+\contentsline {subsection}{\numberline {1.3.3}「はじめてのプログラム」の解説}{23}
+\contentsline {subsubsection}{【コメント】}{23}
+\contentsline {subsubsection}{【include文】}{24}
+\contentsline {subsubsection}{【main関数】}{24}
+\contentsline {subsubsection}{【puts関数】}{25}
+\contentsline {subsubsection}{【return文】}{25}
+\contentsline {section}{\numberline {1.4}標準出力への出力}{26}
+\contentsline {subsubsection}{【簡単な表の出力】}{26}
+\contentsline {subsubsection}{【解説】}{26}
+\contentsline {subsubsection}{【エスケープシークエンス】}{26}
+\contentsline {subsubsection}{【printf関数とputchar関数】}{27}
+\contentsline {chapter}{\numberline {第2講}変数の概念}{29}
+\contentsline {section}{\numberline {2.1}変数とデータ型}{29}
+\contentsline {subsection}{\numberline {2.1.1}変数とは}{29}
+\contentsline {subsubsection}{【変数使用の3ステップ】}{29}
+\contentsline {subsubsection}{【データ型】}{30}
+\contentsline {subsection}{\numberline {2.1.2}識別子の命名}{30}
+\contentsline {subsubsection}{【命名規則】}{31}
+\contentsline {subsubsection}{【命名のマナー】}{31}
+\contentsline {subsection}{\numberline {2.1.3}整数型の仕組み}{31}
+\contentsline {subsubsection}{【2の補数表現】}{32}
+\contentsline {subsection}{\numberline {2.1.4}浮動小数点数型の仕組み}{33}
+\contentsline {subsubsection}{【固定小数点数】}{33}
+\contentsline {subsubsection}{【浮動小数点数】}{33}
+\contentsline {subsubsection}{【例外演算】}{34}
+\contentsline {subsection}{\numberline {2.1.5}文字型の仕組み}{34}
+\contentsline {section}{\numberline {2.2}変数の入出力と演算}{35}
+\contentsline {subsection}{\numberline {2.2.1}変数の出力}{35}
+\contentsline {subsubsection}{【変数の使用】}{35}
+\contentsline {subsubsection}{【解法】}{35}
+\contentsline {subsubsection}{【変数の利用】}{36}
+\contentsline {subsubsection}{【書式指定出力】}{36}
+\contentsline {subsubsection}{【リテラルの書き方】}{38}
+\contentsline {subsection}{\numberline {2.2.2}変数の入力と簡単な計算}{38}
+\contentsline {subsubsection}{【変数と四則演算】}{38}
+\contentsline {subsubsection}{【解法】}{38}
+\contentsline {subsubsection}{【scanfによる入力】}{39}
+\contentsline {subsubsection}{【簡単な計算と演算子】}{40}
+\contentsline {subsubsection}{【型変換】}{42}
+\contentsline {chapter}{\numberline {第3講}変数の活用}{44}
+\contentsline {section}{\numberline {3.1}計算の誤差}{44}
+\contentsline {subsubsection}{【誤差の確認】}{44}
+\contentsline {subsection}{\numberline {3.1.1}丸め誤差}{45}
+\contentsline {subsection}{\numberline {3.1.2}桁落ち}{45}
+\contentsline {subsection}{\numberline {3.1.3}情報落ち}{46}
+\contentsline {subsection}{\numberline {3.1.4}計算機イプシロン}{46}
+\contentsline {subsection}{\numberline {3.1.5}打ち切り誤差}{46}
+\contentsline {section}{\numberline {3.2}ビット演算}{46}
+\contentsline {subsubsection}{【IPv4 addressの解析】}{47}
+\contentsline {subsubsection}{【各種のビット処理】}{47}
+\contentsline {subsubsection}{【リスト3.2\relax の解説】}{48}
+\contentsline {section}{\numberline {3.3}数学関数と複素数演算}{49}
+\contentsline {subsection}{\numberline {3.3.1}数学関数の利用}{49}
+\contentsline {subsubsection}{【対数関数の使用例】}{49}
+\contentsline {subsubsection}{【解法】}{49}
+\contentsline {subsubsection}{【数学関数利用の上で】}{50}
+\contentsline {subsubsection}{【数学関数の型】}{51}
+\contentsline {subsection}{\numberline {3.3.2}複素数演算と型総称数学関数}{51}
+\contentsline {subsubsection}{【ド・モアブルの定理の確認】}{52}
+\contentsline {subsubsection}{【複素数型と虚数型】}{52}
+\contentsline {subsubsection}{【複素数型/虚数型の型変換】}{53}
+\contentsline {subsubsection}{【複素数関数】}{53}
+\contentsline {subsubsection}{【型総称数学関数ヘッダ】}{54}
+\contentsline {chapter}{\numberline {第4講}分岐構造}{56}
+\contentsline {section}{\numberline {4.1}分岐構造とは}{56}
+\contentsline {section}{\numberline {4.2}if文とelse文}{56}
+\contentsline {subsection}{\numberline {4.2.1}if文}{56}
+\contentsline {subsubsection}{【0割回避機能付き四則演算】}{56}
+\contentsline {subsubsection}{【解説】}{56}
+\contentsline {subsubsection}{【if文の使い方】}{57}
+\contentsline {subsubsection}{【条件式とその値】}{57}
+\contentsline {subsection}{\numberline {4.2.2}else文}{58}
+\contentsline {subsubsection}{【偶奇の判定】}{59}
+\contentsline {subsubsection}{【解説】}{59}
+\contentsline {subsubsection}{【else文】}{59}
+\contentsline {section}{\numberline {4.3}論理演算子}{60}
+\contentsline {subsubsection}{【閏年の判定】}{60}
+\contentsline {subsubsection}{【解説】}{60}
+\contentsline {subsubsection}{【論理演算子の意味】}{61}
+\contentsline {subsubsection}{【論理演算子の計算順序と評価】}{62}
+\contentsline {section}{\numberline {4.4}switch～case文}{62}
+\contentsline {subsubsection}{【計算式を打ち込む四則演算】}{63}
+\contentsline {subsubsection}{【解説】}{63}
+\contentsline {subsubsection}{【switch caseによる分岐】}{63}
+\contentsline {subsubsection}{【breakなしのswitch～case】}{64}
+\contentsline {subsubsection}{【月の日数】}{65}
+\contentsline {subsubsection}{【解説】}{65}
+\contentsline {section}{\numberline {4.5}条件演算子}{65}
+\contentsline {subsubsection}{【二数の比較】}{66}
+\contentsline {subsubsection}{【解説】}{66}
+\contentsline {section}{\numberline {4.6}\_Bool型の利用}{66}
+\contentsline {subsubsection}{【\_Bool型を扱うヘッダ】}{67}
+\contentsline {chapter}{\numberline {第5講}反復構造}{69}
+\contentsline {section}{\numberline {5.1}反復構造とは}{69}
+\contentsline {section}{\numberline {5.2}while文}{69}
+\contentsline {subsubsection}{【角谷予想】}{69}
+\contentsline {subsubsection}{【while文による反復】}{70}
+\contentsline {subsubsection}{【ターミネータ型総和】}{70}
+\contentsline {subsubsection}{【解説】}{70}
+\contentsline {section}{\numberline {5.3}do-while文}{71}
+\contentsline {subsubsection}{【数当てゲーム】}{71}
+\contentsline {subsubsection}{【擬似乱数】}{71}
+\contentsline {subsubsection}{【do-while文】}{72}
+\contentsline {section}{\numberline {5.4}for文}{73}
+\contentsline {subsubsection}{【FizzBuzz】}{73}
+\contentsline {subsubsection}{【for文】}{73}
+\contentsline {subsubsection}{【九九表の出力】}{74}
+\contentsline {subsubsection}{【解説】}{74}
+\contentsline {section}{\numberline {5.5}反復制御文とgoto文}{75}
+\contentsline {subsubsection}{【ハイ\&ローゲーム】}{75}
+\contentsline {subsubsection}{【解説】}{75}
+\contentsline {subsubsection}{【break文とcontinue文】}{77}
+\contentsline {subsubsection}{【goto文とラベル】}{78}
+\contentsline {subsubsection}{【リスト5.6\relax の簡単な解釈】}{78}
+\contentsline {chapter}{\numberline {第6講}自作関数とプリプロセッサ}{80}
+\contentsline {section}{\numberline {6.1}関数の呼び出しと利用}{80}
+\contentsline {subsection}{\numberline {6.1.1}関数化の意義}{80}
+\contentsline {subsection}{\numberline {6.1.2}関数の要素}{81}
+\contentsline {section}{\numberline {6.2}自作関数の利用}{82}
+\contentsline {subsubsection}{【素数の全列挙】}{82}
+\contentsline {subsubsection}{【解説】}{82}
+\contentsline {subsection}{\numberline {6.2.1}自作関数の作成方法}{82}
+\contentsline {subsubsection}{【自作関数の返却値】}{83}
+\contentsline {subsubsection}{【関数名について】}{84}
+\contentsline {subsubsection}{【引数について】}{84}
+\contentsline {subsection}{\numberline {6.2.2}関数プロトタイプ宣言}{85}
+\contentsline {subsection}{\numberline {6.2.3}型の別名定義}{85}
+\contentsline {section}{\numberline {6.3}スコープと寿命}{86}
+\contentsline {subsection}{\numberline {6.3.1}オブジェクトのスコープ(有効範囲)}{86}
+\contentsline {subsubsection}{【宣言とスコープ】}{87}
+\contentsline {subsubsection}{【グローバル変数とローカル変数】}{87}
+\contentsline {subsection}{\numberline {6.3.2}変数の寿命}{88}
+\contentsline {subsubsection}{【記憶クラス指定子】}{88}
+\contentsline {subsubsection}{【呼び出し回数を数える関数】}{89}
+\contentsline {section}{\numberline {6.4}前処理命令と分割コンパイル}{89}
+\contentsline {subsection}{\numberline {6.4.1}マクロ}{90}
+\contentsline {subsubsection}{【マクロの利用】}{90}
+\contentsline {subsubsection}{【オブジェクト形式マクロ】}{90}
+\contentsline {subsubsection}{【関数形式マクロ】}{91}
+\contentsline {subsubsection}{【マクロのスコープとマクロに関する命令】}{91}
+\contentsline {subsubsection}{【マクロに関する諸注意】}{93}
+\contentsline {subsection}{\numberline {6.4.2}ヘッダファイルの実態とインクルード}{94}
+\contentsline {subsubsection}{【インクルード文の動作】}{94}
+\contentsline {subsubsection}{【インクルード文】}{95}
+\contentsline {subsubsection}{【ヘッダファイルの実態】}{95}
+\contentsline {subsubsection}{【多重インクルードの防止】}{95}
+\contentsline {subsection}{\numberline {6.4.3}分割コンパイルと複数ファイルでのスコープ}{96}
+\contentsline {subsubsection}{【分割コンパイルの手法】}{96}
+\contentsline {subsubsection}{【分割コンパイル】}{96}
+\contentsline {subsubsection}{【複数ファイルでのスコープについて】}{97}
+\contentsline {chapter}{\numberline {第7講}様々な関数}{100}
+\contentsline {section}{\numberline {7.1}標準ライブラリの利用}{100}
+\contentsline {subsection}{\numberline {7.1.1}時間計測}{100}
+\contentsline {subsubsection}{【時間計測】}{100}
+\contentsline {subsubsection}{【time関数】}{101}
+\contentsline {subsubsection}{【clock関数】}{101}
+\contentsline {subsection}{\numberline {7.1.2}文字の分類に関する関数}{102}
+\contentsline {subsubsection}{【大文字/小文字の判定】}{102}
+\contentsline {subsubsection}{【解説】}{102}
+\contentsline {subsubsection}{【is～～～関数】}{102}
+\contentsline {subsubsection}{【大/小文字変換】}{103}
+\contentsline {subsubsection}{【ctype.hの引数と返却値】}{103}
+\contentsline {subsection}{\numberline {7.1.3}プログラムの終了}{103}
+\contentsline {subsubsection}{【exit関数】}{104}
+\contentsline {subsubsection}{【abort関数】}{104}
+\contentsline {subsubsection}{【終了関連マクロ】}{104}
+\contentsline {subsection}{\numberline {7.1.4}型に関する標準ライブラリ}{105}
+\contentsline {subsubsection}{【float.hとlimits.h】}{105}
+\contentsline {subsubsection}{【fenv.hによる例外処理】}{105}
+\contentsline {subsubsection}{【0割例外処理を含む除算】}{106}
+\contentsline {subsubsection}{【解説】}{106}
+\contentsline {subsubsection}{【inttypes.hとstdint.h】}{107}
+\contentsline {subsubsection}{【絶対値の出力】}{108}
+\contentsline {subsubsection}{【解説】}{108}
+\contentsline {subsection}{\numberline {7.1.5}代替綴りとトライグラフ}{108}
+\contentsline {subsubsection}{【代替綴りとiso646.h】}{108}
+\contentsline {subsubsection}{【トライグラフ】}{109}
+\contentsline {subsection}{\numberline {7.1.6}manコマンド}{109}
+\contentsline {section}{\numberline {7.2}再帰関数}{110}
+\contentsline {subsubsection}{【再帰を用いた累乗】}{110}
+\contentsline {subsubsection}{【解説】}{110}
+\contentsline {subsubsection}{【負数の場合の処理】}{111}
+\contentsline {subsection}{\numberline {7.2.1}再帰関数のメモリ上での動作}{111}
+\contentsline {subsubsection}{【アッカーマン関数】}{111}
+\contentsline {subsubsection}{【再帰呼び出しの様子】}{111}
+\contentsline {subsubsection}{【再帰処理とメモリ】}{112}
+\contentsline {subsection}{\numberline {7.2.2}再帰関数の注意点}{112}
+\contentsline {section}{\numberline {7.3}可変引数関数}{113}
+\contentsline {subsection}{\numberline {7.3.1}stdarg.hの利用}{113}
+\contentsline {subsection}{\numberline {7.3.2}ターミネータを用いる方法}{114}
+\contentsline {subsubsection}{【総和計算関数(ターミネータ利用)】}{114}
+\contentsline {subsubsection}{【解説】}{114}
+\contentsline {subsection}{\numberline {7.3.3}可変引数より前の引数で個数を示す方法}{115}
+\contentsline {subsubsection}{【総和計算関数(個数情報利用)】}{115}
+\contentsline {subsubsection}{【解説】}{115}
+\contentsline {subsection}{\numberline {7.3.4}可変引数を一括処理する関数}{116}
+\contentsline {subsubsection}{【改行されるprintf】}{116}
+\contentsline {subsubsection}{【解説】}{116}
+\contentsline {section}{\numberline {7.4}インライン関数}{116}
+\contentsline {chapter}{\numberline {第8講}派生型(1) 静的配列と文字列}{119}
+\contentsline {section}{\numberline {8.1}基本型と派生型}{119}
+\contentsline {subsection}{\numberline {8.1.1}派生操作の組み合わせ}{119}
+\contentsline {subsection}{\numberline {8.1.2}基本型でも派生型でもない型}{120}
+\contentsline {subsection}{\numberline {8.1.3}型についてのまとめ}{120}
+\contentsline {section}{\numberline {8.2}静的配列}{120}
+\contentsline {subsection}{\numberline {8.2.1}配列に関する用語}{121}
+\contentsline {subsection}{\numberline {8.2.2}1次元配列}{121}
+\contentsline {subsubsection}{【ホフスタッター数列の計算】}{121}
+\contentsline {subsubsection}{【解説】}{122}
+\contentsline {subsubsection}{【配列の宣言】}{122}
+\contentsline {subsubsection}{【配列の初期化】}{123}
+\contentsline {subsubsection}{【配列の参照】}{124}
+\contentsline {subsubsection}{【範囲外アクセスを防ぐための工夫】}{124}
+\contentsline {subsection}{\numberline {8.2.3}多次元配列}{125}
+\contentsline {subsubsection}{【正方行列の積】}{125}
+\contentsline {subsubsection}{【解説】}{126}
+\contentsline {subsubsection}{【多次元配列の利用】}{127}
+\contentsline {subsubsection}{【多次元配列のメモリ上での配置】}{127}
+\contentsline {subsection}{\numberline {8.2.4}一次元静的配列を引数に取る関数}{127}
+\contentsline {subsubsection}{【ベクトルの内積】}{128}
+\contentsline {subsubsection}{【解説】}{128}
+\contentsline {subsubsection}{【配列引数とその呼び出し】}{128}
+\contentsline {subsubsection}{【引数の配列への直接操作】}{129}
+\contentsline {subsubsection}{【配列のシャッフル】}{130}
+\contentsline {subsubsection}{【解説】}{130}
+\contentsline {section}{\numberline {8.3}文字列}{131}
+\contentsline {subsection}{\numberline {8.3.1}文字列とその取り扱い}{131}
+\contentsline {subsubsection}{【Hello World再び】}{131}
+\contentsline {subsubsection}{【文字列に関する規則】}{132}
+\contentsline {subsubsection}{【文字列リテラル】}{132}
+\contentsline {subsubsection}{【文字列の入出力方法】}{133}
+\contentsline {subsubsection}{【文字列の入出力】}{133}
+\contentsline {subsection}{\numberline {8.3.2}文字列操作関数}{135}
+\contentsline {subsubsection}{【DL速度計算プログラム】}{135}
+\contentsline {subsubsection}{【文字列からの読み込み】}{136}
+\contentsline {subsubsection}{【文字列の比較】}{136}
+\contentsline {subsubsection}{【その他の文字列関数】}{136}
+\contentsline {chapter}{\numberline {第9講}派生型(2) 構造体・共用体他}{138}
+\contentsline {section}{\numberline {9.1}構造体}{138}
+\contentsline {subsection}{\numberline {9.1.1}構造体の概念}{138}
+\contentsline {subsection}{\numberline {9.1.2}構造体の利用}{138}
+\contentsline {subsubsection}{【トランプ版ハイ\&ロー】}{139}
+\contentsline {subsubsection}{【構造体の宣言】}{139}
+\contentsline {subsubsection}{【構造体の初期化と代入】}{140}
+\contentsline {subsubsection}{【構造体メンバへの操作】}{141}
+\contentsline {subsubsection}{【構造体メンバのメモリ上での配置】}{142}
+\contentsline {subsubsection}{【構造体のネスト】}{143}
+\contentsline {subsubsection}{【円と点の位置関係】}{143}
+\contentsline {subsubsection}{【解説】}{143}
+\contentsline {subsubsection}{【構造体を用いる関数】}{144}
+\contentsline {subsubsection}{【構造体を使うタイミング】}{145}
+\contentsline {subsection}{\numberline {9.1.3}ビットフィールド}{145}
+\contentsline {subsubsection}{【誕生日のチェック】}{145}
+\contentsline {section}{\numberline {9.2}共用体}{147}
+\contentsline {subsection}{\numberline {9.2.1}共用体の概念}{147}
+\contentsline {subsection}{\numberline {9.2.2}共用体の利用}{147}
+\contentsline {subsubsection}{【ベクトルの回転】}{147}
+\contentsline {subsubsection}{【解説】}{148}
+\contentsline {section}{\numberline {9.3}列挙型}{149}
+\contentsline {subsection}{\numberline {9.3.1}列挙型の概念}{149}
+\contentsline {subsection}{\numberline {9.3.2}列挙型の利用}{149}
+\contentsline {subsubsection}{【円と点の位置関係(列挙型版)】}{149}
+\contentsline {subsubsection}{【解説】}{149}
+\contentsline {subsubsection}{【列挙型の宣言と定義】}{151}
+\contentsline {chapter}{\numberline {第10講}派生型(3) ポインタの概念}{154}
+\contentsline {section}{\numberline {10.1}メモリ領域再論}{154}
+\contentsline {section}{\numberline {10.2}アドレスとポインタ}{155}
+\contentsline {subsection}{\numberline {10.2.1}アドレスの取得と意義}{155}
+\contentsline {subsubsection}{【配列のアドレス確認】}{155}
+\contentsline {subsubsection}{【メモリの性質の確認】}{155}
+\contentsline {subsubsection}{【アドレスの取得方法】}{156}
+\contentsline {subsubsection}{【何故アドレスを用いるのか】}{157}
+\contentsline {subsubsection}{【アドレス渡しはスコープに影響を与えるか】}{158}
+\contentsline {subsubsection}{【アドレスを用いた参照の危険性】}{159}
+\contentsline {subsubsection}{【const修飾子付き変数への入力】}{159}
+\contentsline {subsection}{\numberline {10.2.2}アドレスのための変数=ポインタ}{160}
+\contentsline {subsubsection}{【ポインタは何故派生型なのか】}{160}
+\contentsline {subsubsection}{【ポインタのサイズ】}{161}
+\contentsline {subsubsection}{【ポインタの宣言】}{162}
+\contentsline {subsubsection}{【再帰処理のメモリ確保状態】}{162}
+\contentsline {subsubsection}{【解説】}{162}
+\contentsline {subsubsection}{【間接演算子】}{163}
+\contentsline {section}{\numberline {10.3}ポインタ演算}{165}
+\contentsline {subsubsection}{【文字列の小文字出力】}{165}
+\contentsline {subsubsection}{【解説】}{165}
+\contentsline {subsubsection}{【ポインタと整数の加減算】}{165}
+\contentsline {subsubsection}{【ポインタ同士の減算】}{165}
+\contentsline {subsubsection}{【ポインタを用いた配列アクセス】}{166}
+\contentsline {subsubsection}{【間接演算子の演算順序について】}{167}
+\contentsline {section}{\numberline {10.4}ポインタを用いる関数}{168}
+\contentsline {subsection}{\numberline {10.4.1}ポインタを用いる自作関数}{168}
+\contentsline {subsubsection}{【二つの変数の値を交換する関数】}{169}
+\contentsline {subsubsection}{【解説】}{169}
+\contentsline {subsubsection}{【ポインタ引数関数】}{169}
+\contentsline {subsubsection}{【ポインタを返却値に取る関数】}{169}
+\contentsline {subsection}{\numberline {10.4.2}ポインタを用いる標準ライブラリ関数}{170}
+\contentsline {subsubsection}{【NULLポインタ】}{170}
+\contentsline {subsubsection}{【文字列関数について】}{170}
+\contentsline {subsubsection}{【文字列の分割】}{171}
+\contentsline {subsubsection}{【多項式の分割】}{171}
+\contentsline {subsubsection}{【整数/小数の判別】}{172}
+\contentsline {subsubsection}{【整数/小数を判別して型を選ぶ】}{172}
+\contentsline {subsubsection}{【解説】}{172}
+\contentsline {chapter}{\numberline {第11講}派生型(4) ポインタの活用}{175}
+\contentsline {section}{\numberline {11.1}各種派生型へのポインタ}{175}
+\contentsline {subsection}{\numberline {11.1.1}配列とポインタの関係～ポインタは配列エイリアスか～}{175}
+\contentsline {subsubsection}{【配列の総和(積み残し誤差回避型)】}{175}
+\contentsline {subsubsection}{【解説】}{175}
+\contentsline {subsubsection}{【配列エイリアスとしてのポインタ】}{176}
+\contentsline {subsubsection}{【restrict修飾子】}{177}
+\contentsline {subsubsection}{【配列オフセットの変更】}{177}
+\contentsline {subsubsection}{【Pascalの三角形】}{177}
+\contentsline {subsubsection}{【解説】}{177}
+\contentsline {subsubsection}{【配列とポインタの違い】}{178}
+\contentsline {subsubsection}{【浅いコピーと深いコピー】}{179}
+\contentsline {subsection}{\numberline {11.1.2}文字列リテラルについて}{180}
+\contentsline {subsubsection}{【もっとHello World】}{180}
+\contentsline {subsubsection}{【解説】}{180}
+\contentsline {subsubsection}{【文字列リテラルによる初期化】}{180}
+\contentsline {subsubsection}{【ポインタとconst】}{181}
+\contentsline {subsection}{\numberline {11.1.3}関数へのポインタ}{182}
+\contentsline {subsubsection}{【関数ポインタの宣言と利用】}{182}
+\contentsline {subsubsection}{【関数の台形積分】}{182}
+\contentsline {subsubsection}{【解説】}{182}
+\contentsline {subsubsection}{【関数ポインタを利用する標準関数】}{184}
+\contentsline {subsection}{\numberline {11.1.4}ポインタへのポインタ}{184}
+\contentsline {subsubsection}{【多重ポインタの概念と利用】}{184}
+\contentsline {subsubsection}{【行列の表現例と行交換】}{184}
+\contentsline {subsubsection}{【解説】}{184}
+\contentsline {subsubsection}{【多次元配列へのポインタと多重ポインタの差異】}{185}
+\contentsline {section}{\numberline {11.2}メモリの動的確保}{187}
+\contentsline {subsection}{\numberline {11.2.1}動的配列の概念と利用法}{187}
+\contentsline {subsubsection}{【動的配列の利用手順】}{187}
+\contentsline {subsubsection}{【動的配列の確保と解放】}{188}
+\contentsline {subsubsection}{【Pascalの三角形再び】}{188}
+\contentsline {subsubsection}{【解説】}{188}
+\contentsline {subsubsection}{【動的配列の拡大/縮小】}{190}
+\contentsline {subsection}{\numberline {11.2.2}フレキシブル配列メンバ}{190}
+\contentsline {section}{\numberline {11.3}関数間で配列をやり取りするには}{191}
+\contentsline {subsection}{\numberline {11.3.1}一次元配列に帰着させる方法}{191}
+\contentsline {subsection}{\numberline {11.3.2}要素数を固定して渡す方法}{192}
+\contentsline {subsection}{\numberline {11.3.3}配列エイリアスのポインタを用いる}{192}
+\contentsline {chapter}{\numberline {第12講}ストリームと入出力}{194}
+\contentsline {section}{\numberline {12.1}ファイルとストリーム}{194}
+\contentsline {subsection}{\numberline {12.1.1}ファイルとは}{194}
+\contentsline {subsection}{\numberline {12.1.2}ストリームとは}{195}
+\contentsline {subsubsection}{【C言語における代表的なストリーム】}{195}
+\contentsline {subsection}{\numberline {12.1.3}リダイレクトの意味}{195}
+\contentsline {section}{\numberline {12.2}ストリームの取り扱い}{196}
+\contentsline {subsection}{\numberline {12.2.1}ファイルの開閉と入出力}{196}
+\contentsline {subsubsection}{【ファイルの行数】}{196}
+\contentsline {subsubsection}{【解説】}{196}
+\contentsline {subsubsection}{【ファイルを開く方法】}{197}
+\contentsline {subsubsection}{【ファイルを閉じる】}{199}
+\contentsline {subsubsection}{【ファイルへの入出力】}{200}
+\contentsline {subsection}{\numberline {12.2.2}ファイル・ストリームを取り扱う関数}{201}
+\contentsline {section}{\numberline {12.3}バイナリファイルの入出力}{202}
+\contentsline {subsubsection}{【ビット反転プログラム】}{202}
+\contentsline {subsubsection}{【解説】}{203}
+\contentsline {subsubsection}{【バイナリ入出力関数】}{203}
+\contentsline {section}{\numberline {12.4}コマンドライン引数}{204}
+\contentsline {subsection}{\numberline {12.4.1}main関数の引数}{204}
+\contentsline {subsubsection}{【catコマンドの実装】}{204}
+\contentsline {subsubsection}{【解説】}{205}
+\contentsline {subsection}{\numberline {12.4.2}第3のコマンドライン引数}{206}
+\contentsline {chapter}{\numberline {第13講}データ構造の基礎}{208}
+\contentsline {section}{\numberline {13.1}データ構造とは}{208}
+\contentsline {section}{\numberline {13.2}基本的なデータ構造}{208}
+\contentsline {subsection}{\numberline {13.2.1}スタック}{208}
+\contentsline {subsubsection}{【回文の判定】}{209}
+\contentsline {subsubsection}{【解説】}{209}
+\contentsline {subsection}{\numberline {13.2.2}キュー}{209}
+\contentsline {subsubsection}{【キューを用いたHonorの方法】}{210}
+\contentsline {subsubsection}{【解説】}{210}
+\contentsline {section}{\numberline {13.3}リスト}{211}
+\contentsline {subsection}{\numberline {13.3.1}片方向リスト}{211}
+\contentsline {subsubsection}{【リストの特徴】}{212}
+\contentsline {subsection}{\numberline {13.3.2}双方向リスト}{212}
+\contentsline {subsection}{\numberline {13.3.3}ループのチェック}{212}
+\contentsline {section}{\numberline {13.4}木(Tree)構造}{213}
+\contentsline {subsection}{\numberline {13.4.1}二分木}{214}
+\contentsline {subsection}{\numberline {13.4.2}木の探索}{214}
+\contentsline {subsubsection}{【深さ優先探索(DFS)】}{214}
+\contentsline {subsubsection}{【幅優先探索(BFS)】}{215}
+\contentsline {subsection}{\numberline {13.4.3}二分ヒープ}{215}
+\contentsline {subsubsection}{【上方移動によるヒープへの要素挿入】}{216}
+\contentsline {subsubsection}{【下方移動によるヒープへの変換】}{216}
+\contentsline {subsection}{\numberline {13.4.4}二分探索木}{217}
+\contentsline {subsubsection}{【二分探索木の構築】}{217}
+\contentsline {subsubsection}{【ノードの削除】}{218}
+\contentsline {section}{\numberline {13.5}グラフ}{218}
+\contentsline {subsection}{\numberline {13.5.1}グラフの基礎概念}{219}
+\contentsline {subsubsection}{【グラフの種類】}{220}
+\contentsline {subsection}{\numberline {13.5.2}グラフの実装と連結性チェック}{220}
+\contentsline {subsubsection}{【隣接行列/接続行列による表現】}{220}
+\contentsline {subsubsection}{【グラフの連結性チェック】}{221}
+\contentsline {subsection}{\numberline {13.5.3}最短路問題}{221}
+\contentsline {subsubsection}{【Bellman-Ford法】}{222}
+\contentsline {subsubsection}{【Dijkstra法】}{223}
+\contentsline {subsubsection}{【Warshall-Floyd法】}{224}
+\contentsline {subsection}{\numberline {13.5.4}閉路問題}{225}
+\contentsline {subsubsection}{【頂点の次数】}{225}
+\contentsline {subsubsection}{【オイラー閉路問題と一筆書き】}{225}
+\contentsline {subsubsection}{【ハミルトン閉路問題と巡回セールスマン問題】}{226}
+\contentsline {chapter}{\numberline {第14講}ソートとサーチ}{228}
+\contentsline {section}{\numberline {14.1}ソート総論}{228}
+\contentsline {subsection}{\numberline {14.1.1}ソートとは何か}{228}
+\contentsline {subsection}{\numberline {14.1.2}ソートの解析～バブルソートを例に～}{228}
+\contentsline {subsubsection}{【時間計算量と空間計算量】}{229}
+\contentsline {subsubsection}{【ソートの安定性】}{230}
+\contentsline {subsubsection}{【バブルソートのまとめ】}{230}
+\contentsline {subsubsection}{【手順】}{230}
+\contentsline {subsubsection}{【性質/特徴】}{230}
+\contentsline {section}{\numberline {14.2}基本的なソート}{230}
+\contentsline {subsection}{\numberline {14.2.1}挿入ソート}{230}
+\contentsline {subsubsection}{【手順】}{231}
+\contentsline {subsubsection}{【性質/特徴】}{231}
+\contentsline {subsection}{\numberline {14.2.2}選択ソート}{231}
+\contentsline {subsubsection}{【手順】}{231}
+\contentsline {subsubsection}{【性質/特徴】}{231}
+\contentsline {subsection}{\numberline {14.2.3}シェーカーソート}{232}
+\contentsline {subsubsection}{【手順】}{232}
+\contentsline {subsubsection}{【性質/特徴】}{232}
+\contentsline {subsection}{\numberline {14.2.4}ノームソート}{232}
+\contentsline {subsubsection}{【手順】}{233}
+\contentsline {subsubsection}{【性質/特徴】}{233}
+\contentsline {subsection}{\numberline {14.2.5}シェルソート}{233}
+\contentsline {subsubsection}{【手順】}{233}
+\contentsline {subsubsection}{【性質/特徴】}{233}
+\contentsline {section}{\numberline {14.3}高速なソート}{234}
+\contentsline {subsection}{\numberline {14.3.1}マージとマージソート}{234}
+\contentsline {subsubsection}{【マージ】}{234}
+\contentsline {subsubsection}{【マージの実装】}{234}
+\contentsline {subsubsection}{【マージソート】}{235}
+\contentsline {subsubsection}{【手順】}{236}
+\contentsline {subsubsection}{【性質/特徴】}{236}
+\contentsline {subsubsection}{【少要素数への対応】}{236}
+\contentsline {subsection}{\numberline {14.3.2}クイックソート}{237}
+\contentsline {subsubsection}{【クイックソートのアルゴリズムと乱択】}{237}
+\contentsline {subsubsection}{【手順】}{237}
+\contentsline {subsubsection}{【性質/特徴】}{237}
+\contentsline {subsubsection}{【qsort関数と比較関数】}{238}
+\contentsline {subsubsection}{【qsort関数によるソート】}{238}
+\contentsline {subsection}{\numberline {14.3.3}ヒープソート}{239}
+\contentsline {subsubsection}{【手順】}{239}
+\contentsline {subsubsection}{【性質/特徴】}{239}
+\contentsline {subsection}{\numberline {14.3.4}コムソート}{239}
+\contentsline {subsubsection}{【手順】}{240}
+\contentsline {subsubsection}{【性質/特徴】}{240}
+\contentsline {subsection}{\numberline {14.3.5}ストランドソート}{240}
+\contentsline {subsubsection}{【手順】}{240}
+\contentsline {subsubsection}{【性質/特徴】}{240}
+\contentsline {subsection}{\numberline {14.3.6}イントロソート}{241}
+\contentsline {subsection}{\numberline {14.3.7}ティムソート}{241}
+\contentsline {subsection}{\numberline {14.3.8}バケットソート}{242}
+\contentsline {subsubsection}{【手順】}{242}
+\contentsline {subsubsection}{【性質/特徴】}{242}
+\contentsline {section}{\numberline {14.4}サーチとその手法}{243}
+\contentsline {subsection}{\numberline {14.4.1}リニアサーチ}{243}
+\contentsline {subsection}{\numberline {14.4.2}バイナリサーチ}{243}
+\contentsline {subsubsection}{【bsearch関数】}{243}
+\contentsline {subsubsection}{【バイナリサーチのアルゴリズム】}{244}
+\contentsline {subsubsection}{【範囲なしのバイナリサーチ】}{244}
+\contentsline {chapter}{\numberline {第15講}数値計算の基礎}{246}
+\contentsline {section}{\numberline {15.1}1元方程式を解く}{246}
+\contentsline {subsection}{\numberline {15.1.1}逐次探索法}{247}
+\contentsline {subsection}{\numberline {15.1.2}二分法}{247}
+\contentsline {subsubsection}{【二分法+逐次探索法】}{247}
+\contentsline {subsubsection}{【二分法/逐次近似法の利用と注意】}{248}
+\contentsline {subsection}{\numberline {15.1.3}割線法}{248}
+\contentsline {subsubsection}{【割線法の漸化式】}{248}
+\contentsline {subsubsection}{【割線法の利用と注意】}{249}
+\contentsline {subsection}{\numberline {15.1.4}はさみうち法}{250}
+\contentsline {subsection}{\numberline {15.1.5}Newton法}{250}
+\contentsline {subsubsection}{【Newton法のアルゴリズム】}{250}
+\contentsline {subsubsection}{【割線法の極限としての導出】}{251}
+\contentsline {subsubsection}{【接線近似からの導出】}{251}
+\contentsline {subsubsection}{【解析的導出】}{252}
+\contentsline {subsubsection}{【数値微分との併用】}{252}
+\contentsline {subsubsection}{【Newton法の実例～平方根の計算～】}{253}
+\contentsline {subsubsection}{【Newton法による平方根の計算】}{254}
+\contentsline {section}{\numberline {15.2}数値積分法}{254}
+\contentsline {subsection}{\numberline {15.2.1}台形則}{254}
+\contentsline {subsection}{\numberline {15.2.2}中点則}{255}
+\contentsline {subsection}{\numberline {15.2.3}シンプソン則}{255}
+\contentsline {subsection}{\numberline {15.2.4}モンテカルロ積分}{256}
+\contentsline {section}{\numberline {15.3}連立方程式と行列}{257}
+\contentsline {subsection}{\numberline {15.3.1}Gauss法}{257}
+\contentsline {subsubsection}{【前進消去過程】}{257}
+\contentsline {subsubsection}{【後退代入過程】}{258}
+\contentsline {subsubsection}{【部分ピボット選択】}{258}
+\contentsline {subsubsection}{【LU分解】}{259}
+\contentsline {subsection}{\numberline {15.3.2}Gauss-Jordan法}{260}
+\contentsline {subsection}{\numberline {15.3.3}行列式や逆行列への応用}{260}
+\contentsline {subsubsection}{【Gauss法による行列式の計算】}{261}
+\contentsline {subsubsection}{【Gauss-Jordan法による逆行列の計算】}{261}
+\contentsline {chapter}{\numberline {付録A}簡易リファレンス}{263}
+\contentsline {section}{\numberline {A.1}assert.h(プログラム診断)}{263}
+\contentsline {section}{\numberline {A.2}ctype.h(文字の分類)}{263}
+\contentsline {section}{\numberline {A.3}errno.h(エラー)}{264}
+\contentsline {section}{\numberline {A.4}float.h(浮動小数点数型属性検査)}{264}
+\contentsline {section}{\numberline {A.5}limits.h(整数型属性検査)}{266}
+\contentsline {section}{\numberline {A.6}locale.h(地域情報管理)}{267}
+\contentsline {section}{\numberline {A.7}math.h(数学関数)}{267}
+\contentsline {section}{\numberline {A.8}setjmp.h(非局所分岐)}{270}
+\contentsline {section}{\numberline {A.9}signal.h(シグナル処理)}{271}
+\contentsline {section}{\numberline {A.10}stdarg.h(可変引数)}{271}
+\contentsline {section}{\numberline {A.11}stddef.h(共通定義)}{271}
+\contentsline {section}{\numberline {A.12}stdio.h(標準入出力)}{272}
+\contentsline {section}{\numberline {A.13}stdlib.h(ユーティリティ)}{275}
+\contentsline {section}{\numberline {A.14}string.h(文字列操作)}{277}
+\contentsline {section}{\numberline {A.15}time.h(時間)}{279}
+\contentsline {section}{\numberline {A.16}iso646.h(代替綴・C95)}{279}
+\contentsline {section}{\numberline {A.17}wchar.h(ワイド文字・C95)}{280}
+\contentsline {section}{\numberline {A.18}wctype.h(ワイド文字変換・C95)}{282}
+\contentsline {section}{\numberline {A.19}complex.h(複素数演算・C99)}{283}
+\contentsline {section}{\numberline {A.20}fenv.h(浮動小数点数環境・C99)}{284}
+\contentsline {section}{\numberline {A.21}inttypes.h(整数型書式・C99)}{285}
+\contentsline {section}{\numberline {A.22}stdbool.h(論理・C99)}{285}
+\contentsline {section}{\numberline {A.23}stdint.h(整数型管理・C99)}{285}
+\contentsline {section}{\numberline {A.24}tgmath.h(型総称数学関数・C99)}{287}
+\contentsline {chapter}{\numberline {付録B}一部解説の付記}{288}
+\contentsline {section}{\numberline {B.1}ASCII文字コード一覧}{288}
+\contentsline {section}{\numberline {B.2}C言語の予約語一覧}{289}
+\contentsline {section}{\numberline {B.3}演算子の評価順序}{291}
+\contentsline {section}{\numberline {B.4}マクロの詳細な文法}{291}
+\contentsline {subsection}{\numberline {B.4.1}文字列化演算子\#}{291}
+\contentsline {subsection}{\numberline {B.4.2}字句連結演算子\#\#}{292}
+\contentsline {subsection}{\numberline {B.4.3}可変引数関数マクロ}{292}
+\contentsline {section}{\numberline {B.5}volatile修飾子}{293}
+\contentsline {section}{\numberline {B.6}ロケール}{293}
+\contentsline {section}{\numberline {B.7}マルチバイト文字とワイド文字}{293}
+\contentsline {subsection}{\numberline {B.7.1}マルチバイト文字}{294}
+\contentsline {subsection}{\numberline {B.7.2}ワイド文字}{294}
+\contentsline {chapter}{\numberline {付録C}Cに関連したWebサービス}{295}

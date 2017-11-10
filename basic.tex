@@ -1,0 +1,229 @@
+\documentclass[a4j,12pt]{jreport}
+\makeatletter
+%\voffset=0in
+%\headheight=0pt
+%\headsep=0pt
+%\textheight=672pt
+%\footskip=24pt
+
+\usepackage{url}
+\usepackage{jtygm}
+\usepackage{ascmac}
+\usepackage[dvips]{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{multicol}
+\usepackage{listings}
+\usepackage{makeidx}
+\usepackage{ccaption}
+\usepackage{here}
+\usepackage{subfigure}
+\usepackage{enumerate}
+\usepackage{color}
+\usepackage{fancybox}
+\usepackage[margin=2.5cm,head=0cm,headsep=0cm]{geometry}
+
+
+\renewcommand{\postchaptername}{講}
+\renewcommand{\lstlistingname}{リスト}
+
+\newcommand{\minisec}[1]{
+\subsubsection{【#1】}
+}
+
+% 付録の始まり
+\newcommand{\beginappendix}{
+  % 章番号の書式変更
+  \setcounter{chapter}{0}
+  \renewcommand{\prechaptername}{付録}
+  \renewcommand{\postchaptername}{} 
+  \renewcommand{\thechapter}{\@Alph\c@chapter}
+  \renewcommand{\thesection}{\@Alph\c@chapter.\@arabic\c@section}
+  \renewcommand{\thesubsection}{\@Alph\c@chapter.\@arabic\c@section.\@arabic\c@subsection}
+}
+
+%図番号の書式変更
+  \renewcommand{\thefigure}{%
+  \thechapter.\arabic{figure}}
+  \@addtoreset{figure}{chapter}
+\makeatother
+
+
+\newcommand{\ruby}[2]{%
+\leavevmode
+\setbox0=\hbox{#1}%
+\setbox1=\hbox{\tiny #2}%
+\ifdim\wd0>\wd1 \dimen0=\wd0 \else \dimen0=\wd1 \fi
+\hbox{%
+\kanjiskip=0pt plus 2fil
+\xkanjiskip=0pt plus 2fil
+\vbox{%
+\hbox to \dimen0{%
+\tiny \hfil#2\hfil}%
+\nointerlineskip
+\hbox to \dimen0{\mathstrut\hfil#1\hfil}}}}
+
+\makeatletter
+\lstset{% 
+language={C}, 
+frame=trbl,% 
+basicstyle={\small},% 
+identifierstyle={\small},% 
+commentstyle={\small\ttfamily},% 
+keywordstyle={\small\bfseries},% 
+ndkeywordstyle={\small},% 
+stringstyle={\small\ttfamily}, 
+tabsize=2,
+breaklines=true, 
+frame=none,
+columns=[l]{fullflexible},% 
+numbers=left,% 
+xrightmargin=0zw,% 
+xleftmargin=3zw,% 
+numberstyle={\scriptsize},% 
+stepnumber=1, 
+numbersep=1zw,% 
+backgroundcolor={\color[gray]{.90}},
+} 
+
+%footnoteにおいてverbを有効にする設定
+\long\def\@footnotetext{%
+  \insert\footins\bgroup
+    \normalfont\footnotesize
+    \interlinepenalty\interfootnotelinepenalty
+    \splittopskip\footnotesep
+    \splitmaxdepth \dp\strutbox \floatingpenalty \@MM
+    \hsize\columnwidth \@parboxrestore
+    \protected@edef\@currentlabel{%
+       \csname p@footnote\endcsname\@thefnmark
+    }%
+    \color@begingroup
+      \@makefntext{%
+        \rule\z@\footnotesep\ignorespaces}%
+      \futurelet\next\fo@t}
+\def\fo@t{\ifcat\bgroup\noexpand\next \let\next\f@@t
+                                \else \let\next\f@t\fi \next}
+\def\fo@t{\bgroup\aftergroup\@foot\let\next}
+\def\f@t#1{#1\@foot}
+\def\@foot{\@finalstrut\strutbox\color@endgroup\egroup}
+
+\renewcommand{\seename}{→}
+\makeatother
+
+
+\newenvironment{code}{
+\VerbatimEnvironment
+\begin{quote}
+\begin{Verbatim}	
+}
+{
+\end{Verbatim}
+\end{quote}
+}
+
+
+\makeindex
+
+\begin{document}
+\makeatletter
+\renewcommand{\thelstlisting}{\thechapter.\@arabic\c@lstlisting}
+\makeatother
+
+%\title{{\normalsize 理論と実習の両面から学ぶ}\\ C言語総合講座15講\\〜理論編〜}
+%\author{達哉ん}
+%\date{2006〜2012年度講義を基に}
+%\maketitle
+\begin{titlepage}
+\vspace{24pt}
+\textbf{\large 理論と実習の両面から学ぶ}
+\begin{center}
+\includegraphics[width=0.95\linewidth,keepaspectratio]{title1.eps}
+\end{center}
+\vspace{120pt}
+\begin{center}
+\includegraphics[width=0.75\linewidth,keepaspectratio]{title2.eps}
+\end{center}
+\vspace{120pt}
+\begin{flushright}
+\textbf{\LARGE 達哉ん 著}
+\end{flushright}
+\end{titlepage}
+\newpage
+\pagenumbering{roman}
+\chapter*{はじめに}
+\input{start}
+
+\chapter*{本書の利用方法}
+\input{using}
+
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+\setcounter{chapter}{-1}
+\chapter{プログラミングの前に}
+\input{chap00}
+
+\chapter{プログラミングとは何か}
+\input{chap01}
+
+\chapter{変数の概念}
+\input{chap02}
+
+\chapter{変数の活用}
+\input{chap03}
+
+\chapter{分岐構造}
+\input{chap04}
+
+\chapter{反復構造}
+\input{chap05}
+
+\chapter{自作関数とプリプロセッサ}
+\input{chap06}
+
+\chapter{様々な関数}%標準関数を含む
+\input{chap07}
+
+\chapter{派生型(1) 静的配列と文字列}
+\input{chap08}
+
+\chapter{派生型(2) 構造体・共用体他}
+\input{chap09}
+
+\chapter{派生型(3) ポインタの概念}
+\input{chap10}
+
+\chapter{派生型(4) ポインタの活用}
+\input{chap11}
+
+\chapter{ストリームと入出力}
+\input{chap12}
+
+\chapter{データ構造の基礎}
+\input{chap13}
+
+\chapter{ソートとサーチ}
+\input{chap14}
+
+\chapter{数値計算の基礎}
+\input{chap15}
+
+\beginappendix
+\chapter{簡易リファレンス}
+\input{AppendixA}
+
+
+\chapter{一部解説の付記}
+\input{AppendixB}
+
+\chapter{Cに関連したWebサービス}
+\input{AppendixC}
+
+\chapter*{参考書籍等紹介}
+\input{book}
+
+\chapter*{おわりに}
+\input{last}
+
+\printindex
+
+\end{document}
